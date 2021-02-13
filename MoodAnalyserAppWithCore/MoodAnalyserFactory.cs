@@ -33,6 +33,7 @@ namespace MoodAnalyserAppWithCore
 
                 }
             }
+
             else
             {
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NO_SUCH_METHOD, "Method not found");
