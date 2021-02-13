@@ -112,6 +112,57 @@ namespace NUnitTestProject
             }
         }
 
+        /// <summary>
+        /// TC-6.1  Given Happy Message Using Using Reflector When Proper Should Return Hppy Name Should Return MoodAnalyser Object
+        /// </summary>
+        [Test]
+        public void GivenHppyMessge_WhenProper_ShouldReturnHppy()
+        {
+            string expected = "HAPPY";
+            string mood = MoodAnalyserFactory.InvokeAnalyseMood("HAPPY", "AnalyserMood");
+            Assert.AreEqual(expected, mood);
+        }
+
+        /// <summary>
+        /// TC-6.2  Given Happy Message Using Using Reflector When ImProper Method Should Return Hppy Name Should Throw Exception
+        /// </summary>
+        [Test]
+        public void GivenHppyMessge_WhenIMProperMethod_ShouldThrowException()
+        {
+            string expected = "Method not found";
+            try
+            {
+                string mood = MoodAnalyserFactory.InvokeAnalyseMood("HAPPY", "Analyser");
+            }
+            catch(MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual(expected, exception.Message);
+            }
+        }
+
+        /// <summary>
+        /// TC-6.2  Given Happy Message Using Using Reflector When ImProper Method Should Return Hppy Name Should Throw Exception
+        /// </summary>
+        [Test]
+        public void GivenHppyMessge_WhenIMProperMethod_ShouldThrowException()
+        {
+            string expected = "Method not found";
+            try
+            {
+                string mood = MoodAnalyserFactory.InvokeAnalyseMood("HAPPY", "Analyser");
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual(expected, exception.Message);
+            }
+        }
+
+
+
+
+
+
+
 
 
 
