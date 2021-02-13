@@ -6,10 +6,10 @@ namespace MoodAnalyserAppWithCore
 {
     public class MoodAnalyser
     {
-        string message;
+        public string message;
 
         /// <summary>
-        /// default constructor 
+        /// parameteri 
         /// </summary>
         /// <param name="message"></param>
         public MoodAnalyser()

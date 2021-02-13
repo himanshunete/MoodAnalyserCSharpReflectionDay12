@@ -13,6 +13,8 @@ namespace MoodAnalyserAppWithCore
             NO_SUCH_METHOD,
             EMPTY_MESSAGE,
             NULL_MESSAGE,
+            NO_SUCH_FIELD,
+
         }
 
         public MoodAnalyserCustomException(ExceptionType type, string message) : base(message)

@@ -69,7 +69,7 @@ namespace MoodAnalyserAppWithCore
         }
 
         /// <summary>
-        /// Use Reflection to invoke Method
+        /// UC-6 Use Reflection to invoke Method
         /// </summary>
         /// <param name="message"></param>
         /// <param name="methodName"></param>
@@ -89,6 +89,32 @@ namespace MoodAnalyserAppWithCore
             {
                 throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NO_SUCH_METHOD, "Method not found");
 
+            }
+        }
+
+        /// <summary>
+        /// UC-7 Chnge Mood Dynamically
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="fieldName"></param>
+        /// <returns></returns>
+        public static string SetField(string message, string fieldName)
+        {
+            try
+            {
+                MoodAnalyser moodAnalyser = new MoodAnalyser();
+                Type type = typeof(MoodAnalyser);
+                FieldInfo field = type.GetField(fieldName, BindingFlags.Public | BindingFlags.Instance);
+                if (message == null)
+                {
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NO_SUCH_FIELD, "Message should not be null");        
+                }
+                field.SetValue(moodAnalyser, message);
+                return moodAnalyser.message;
+            }
+            catch (NullReferenceException)
+            {
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NO_SUCH_FIELD, "Field is not found");
             }
         }
 
