@@ -7,6 +7,7 @@ namespace NUnitTestProject
 
     public class Tests
     {
+
         MoodAnalyserFactory moodAnalyserFactory;
         [SetUp]
         public void Setup()
