@@ -100,6 +100,7 @@ namespace MoodAnalyserAppWithCore
         /// <returns></returns>
         public static string SetField(string message, string fieldName)
         {
+
             try
             {
                 MoodAnalyser moodAnalyser = new MoodAnalyser();
