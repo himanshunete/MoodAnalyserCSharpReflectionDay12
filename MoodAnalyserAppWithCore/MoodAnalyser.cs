@@ -8,7 +8,9 @@ namespace MoodAnalyserAppWithCore
     {
         string message;
 
-
+        /// <summary>
+        /// empty constructor
+        /// </summary>
         public MoodAnalyser()
         {
             this.message = null;
